@@ -3,103 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tesla妈妈 — 专业保险经纪人</title>
-  <meta name="description" content="Tesla妈妈，专业保险经纪人，浙大心理系在职研究生，专注家庭保障规划与资产配置。" />
+  <title>Dream It Possible! — Tesla妈妈</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/shared.css" />
   <style>
-    .hero {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 100px var(--gutter) 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: end;
-    }
-    .hero-left .eyebrow { margin-bottom: 24px; }
-    .hero-title { margin-bottom: 28px; }
-    .hero-desc { max-width: 480px; margin-bottom: 36px; }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font: 500 14px/1 var(--font-body);
-      color: var(--fg);
-      border-bottom: 1.5px solid var(--fg);
-      padding-bottom: 4px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .hero-cta:hover { color: var(--accent); border-color: var(--accent); }
-    .hero-cta svg { width: 16px; height: 16px; transition: transform 0.15s; }
-    .hero-cta:hover svg { transform: translateX(4px); }
-    .hero-right { display: flex; flex-direction: column; gap: 32px; }
-    .hero-stat-row { display: flex; gap: 48px; }
-    .hero-stat-num { font: 700 clamp(36px, 4vw, 48px)/1 var(--font-display); letter-spacing: -0.02em; margin-bottom: 6px; }
-    .hero-stat-label { font: 400 12px/1 var(--font-mono); letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
-    .hero-image-area {
-      aspect-ratio: 4/3;
-      background: oklch(94% 0.005 95);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-image-area img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .featured-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px; }
-    .featured-header .eyebrow { margin-bottom: 0; }
-    .view-all { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; }
-    .view-all:hover { color: var(--accent); }
-    .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    .featured-card { padding-top: 24px; border-top: 1px solid var(--border); }
-    .featured-card .card-number { font: 400 11px/1 var(--font-mono); color: var(--muted); margin-bottom: 16px; letter-spacing: 0.08em; }
-
-    .about-teaser { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center; }
-    .about-image { aspect-ratio: 3/4; background: oklch(94% 0.005 95); border: 1px solid var(--border); overflow: hidden; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .about-content .display-md { margin-bottom: 20px; }
-    .about-content .body-lg { color: var(--muted); margin-bottom: 28px; max-width: 520px; }
-    .about-signature { font: 600 14px/1 var(--font-display); margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
-
-    .cta-banner { background: var(--fg); color: oklch(95% 0.004 95); }
-    .cta-inner { max-width: var(--max-w); margin: 0 auto; padding: 80px var(--gutter); display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; }
-    .cta-inner .display-md { color: oklch(95% 0.004 95); margin-bottom: 16px; }
-    .cta-inner .lead { color: oklch(70% 0.012 70); }
-    .cta-qr { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .cta-qr .qr-box { width: 160px; height: 160px; background: oklch(95% 0.004 95); display: grid; place-items: center; font: 400 13px/1.4 var(--font-body); color: oklch(48% 0.012 70); text-align: center; padding: 12px; }
-    .cta-qr-label { font: 400 13px/1 var(--font-body); color: oklch(70% 0.012 70); }
-
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; gap: 48px; }
-      .about-teaser { grid-template-columns: 1fr; gap: 40px; }
-      .cta-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-      .cta-qr { align-items: center; }
-    }
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0%; transition: width 0.1s linear; }
+    .back-link { max-width: 800px; margin: 0 auto; padding: 32px var(--gutter) 0; }
+    .back-link a { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .back-link a:hover { color: var(--fg); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-header { max-width: 800px; margin: 0 auto; padding: 48px var(--gutter) 0; }
+    .article-header .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .article-header h1 { font: 700 clamp(32px, 5vw, 48px)/1.15 var(--font-display); letter-spacing: -0.015em; margin-bottom: 24px; }
+    .article-header .lead { margin-bottom: 32px; max-width: 640px; }
+    .article-meta-row { display: flex; gap: 32px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .meta-author { display: flex; align-items: center; gap: 12px; }
+    .meta-avatar { width: 36px; height: 36px; background: oklch(94% 0.005 95); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-display); color: var(--muted); }
+    .meta-author-name { font: 500 14px/1 var(--font-body); }
+    .meta-author-title { font: 400 12px/1 var(--font-body); color: var(--muted); margin-top: 2px; }
+    .meta-info { display: flex; gap: 24px; font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 80px; }
+    .article-body p { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 28px; }
+    .article-body h2 { font: 600 clamp(22px, 2.5vw, 28px)/1.3 var(--font-display); margin-top: 56px; margin-bottom: 20px; padding-top: 24px; }
+    .article-body h3 { font: 600 20px/1.3 var(--font-display); margin-top: 40px; margin-bottom: 16px; }
+    .article-body blockquote { margin: 48px 0; padding: 32px 0 32px 32px; border-left: 3px solid var(--accent); }
+    .article-body blockquote p { font: 600 clamp(19px, 2vw, 22px)/1.6 var(--font-display); color: var(--fg); margin-bottom: 0; }
+    .article-body .callout { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 40px 0; }
+    .article-body .callout-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .article-body .callout p { font: 400 15px/1.7 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 0; }
+    .article-body ol { margin-bottom: 28px; padding-left: 24px; }
+    .article-body li { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 8px; }
+    .article-tags { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .article-tag { font: 400 12px/1 var(--font-mono); padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+    .author-card-section { border-top: 1px solid var(--border); }
+    .author-card-inner { max-width: 680px; margin: 0 auto; padding: 48px var(--gutter); display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+    .author-photo { width: 80px; height: 100px; overflow: hidden; flex-shrink: 0; }
+    .author-info h4 { font: 600 18px/1.3 var(--font-display); margin-bottom: 4px; }
+    .author-info .title { font: 400 13px/1 var(--font-body); color: var(--muted); margin-bottom: 16px; }
+    .author-info p { font: 400 14px/1.6 var(--font-body); color: var(--muted); margin-bottom: 20px; }
+    .author-contact { display: flex; gap: 24px; align-items: center; }
+    .author-qr { width: 72px; height: 72px; border: none; overflow: hidden; display: grid; place-items: center; font: 400 9px/1.2 var(--font-body); color: var(--muted); text-align: center; padding: 4px; }
+    .author-contact-text { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+    .author-contact-text strong { color: var(--fg); font-weight: 500; }
+    .related-section { border-top: 1px solid var(--border); }
+    .related-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .related-header { margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .related-card { display: block; padding-top: 24px; border-top: 1px solid var(--border); transition: opacity 0.15s; }
+    .related-card:hover { opacity: 0.7; }
+    .related-card .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .related-card h3 { font: 600 clamp(17px, 1.8vw, 20px)/1.3 var(--font-display); margin-bottom: 10px; }
+    .related-card p { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+    .related-card .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); margin-top: 12px; letter-spacing: 0.04em; }
     @media (max-width: 768px) {
-      .hero { padding: 64px var(--gutter) 48px; }
-      .hero-stat-row { gap: 32px; }
-      .featured-grid { grid-template-columns: 1fr; gap: 32px; }
-      .featured-header { flex-direction: column; gap: 12px; }
+      .article-header { padding-top: 32px; }
+      .article-meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .meta-info { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; gap: 24px; }
+      .author-card-inner { grid-template-columns: 1fr; }
+      .author-contact { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
+  <div class="progress-bar" id="progressBar"></div>
+
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">Tesla妈妈</a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="index.html">首页</a></li>
         <li><a href="about.html">关于我</a></li>
-        <li><a href="articles.html">原创文章</a></li>
+        <li><a href="articles.html" class="active">原创文章</a></li>
       </ul>
       <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -107,107 +85,128 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-left">
-      <div class="eyebrow">专业服务</div>
-      <h1 class="display-xl hero-title">先懂保险<br/>才能买对保险</h1>
-      <p class="lead hero-desc">浙大心理系在职研究生，从全职妈妈到专业保险经纪人。始终站在客户立场，提供需求分析、方案定制、投保协助、保后服务的全流程专业陪伴。</p>
-      <a href="about.html" class="hero-cta">
-        了解更多
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </a>
-    </div>
-    <div class="hero-right">
-      <div class="hero-stat-row">
+  <div class="back-link">
+    <a href="articles.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      返回文章列表
+    </a>
+  </div>
+
+  <header class="article-header">
+    <div class="card-eyebrow">个人故事</div>
+    <h1>Dream It Possible!</h1>
+    <p class="lead">一位全职妈妈的自学育儿之路，苦中有乐。起因是为了孩子的保险，后来从客户变身员工，机缘巧合。</p>
+    <div class="article-meta-row">
+      <div class="meta-author">
+        <div class="meta-avatar">T</div>
         <div>
-          <div class="hero-stat-num">200+</div>
-          <div class="hero-stat-label">团队成员</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">TOP3</div>
-          <div class="hero-stat-label">全国业绩</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">100+</div>
-          <div class="hero-stat-label">合作保险公司</div>
+          <div class="meta-author-name">Tesla妈妈</div>
+          <div class="meta-author-title">专业保险经纪人</div>
         </div>
       </div>
-      <div class="hero-image-area">
-        <img src="mq11vkz2-魏娜职业照2的副本2.jpg" alt="Tesla妈妈 — 专业保险经纪人" />
+      <div class="meta-info">
+        <span>Tesla妈妈</span>
+        <span>阅读 6 分钟</span>
       </div>
     </div>
   </header>
 
-  <hr class="divider" style="max-width: var(--max-w); margin: 0 auto;" />
+  <article class="article-body">
 
-  <!-- Featured Articles -->
-  <section class="section">
-    <div class="featured-header">
-      <div class="eyebrow">精选观点</div>
-      <a href="articles.html" class="view-all">查看全部 →</a>
+    <p>大家好，我是Tesla妈妈，可能和大多数妈妈一样，自我介绍都从孩子说起。嗯，是的，生娃之前的经历一般都忽略了……不过，还是想通过这篇文章，与有梦想的你分享两点：一位全职妈妈的自学育儿之路，苦中有乐；起因是为了孩子的保险，后来从客户变身员工，机缘巧合。</p>
+
+    <h2>从0开始，只想做个好妈妈</h2>
+
+    <p>和大多数同龄人一样，我们都深知咱们这一代的教育，特别是家庭教育还是有很大提升空间的。下一代面临的社会环境、竞争情况和我们相比已经发生了很大变化。不是希望孩子考高分考名校，只希望孩子快乐、健康、幸福，能成为一个合格的全球公民。</p>
+
+    <p>那么，怎么做好一个妈妈，怎么做好幼儿教育？与我而言，一切都要从0开始。因为，父辈一代的教育方式，很难直接复制，比如怎么培养专注力、怎么培养亲子关系……在父辈一代涉及的都很少。所以，强烈地意识到要从心理学入手。</p>
+
+    <p>自武汉科技大学毕业后，后来在浙江大学心理系读了2年半的应用心理学硕士，这个决定现在回想起来还是非常正确的。两年后，怀孕生了Tesla宝宝。想着不错过孩子的每一个瞬间，又做了一个决定：全职带娃。</p>
+
+    <p>期间，自学了很多育儿课程、读了很多育儿书籍，希望带着科学的头脑迎接Tesla的到来……虽然自学了这么多循证医学课程，但是专业的事情还是交给专业的人去做。</p>
+
+    <h2>机缘巧合，从客户变身员工</h2>
+
+    <p>起因还是为了Tesla，想给他买一份保险，考虑医疗、意外、教育基金等等。先是网上找，后是和几个保险代理聊……发现还是让我很难下决心。</p>
+
+    <p>后来，网上听保险专业课，还花了388块和一位保险经纪人一对一咨询……折腾了一年多……还没下决心。发现：买一份保险真的是一件很困难的事情，即便学了再多，也只学会了一丁点皮毛，专业的事情还是得交给专业的人去做。</p>
+
+    <p>后来，机缘巧合，遇到了萌逗娘——李丽英。和她沟通中发现，她是一个有责任心、专业的保险经纪人，始终站在我的角度解决痛点问题，被她的专业诚心打动，后来我们的家庭保障计划全部交给了萌逗娘。</p>
+
+    <blockquote>
+      <p>从我自己的经历来看，我觉得保险经纪人不仅是一份工作，更是一份人文关怀，一份关爱，一个朋友。</p>
+    </blockquote>
+
+    <p>进而，促使了我去进一步了解到底怎么样。再后来，萌逗娘变成了我师父，我的身份由客户变成了员工。</p>
+
+    <h2>保险经纪人的六个服务特点</h2>
+
+    <div class="callout">
+      <div class="callout-label">六大服务特点</div>
+      <p>1. 和客户立场一致，代表客户利益<br/>2. 方案定制，不搞产品推销<br/>3. 一对一对接，货比三家<br/>4. 专业细致，四大步骤一个都不能少<br/>5. 尊重隐私，不窥探不传播不泄露<br/>6. 团队强大，不是一个人在战斗</p>
     </div>
-    <div class="featured-grid">
-      <a href="article-1.html" class="article-card featured-card">
-        <div class="card-number">01</div>
-        <div class="card-eyebrow">个人介绍</div>
-        <h3 class="card-title">为什么选我？认准专业的保险经纪人</h3>
-        <p class="card-excerpt">六大理由告诉你，为什么保险经纪人比代理人更值得信赖——始终站在客户立场，提供定制方案……</p>
-        <div class="card-meta">Tesla妈妈 · 阅读 5 分钟</div>
-      </a>
-      <a href="article-2.html" class="article-card featured-card">
-        <div class="card-number">02</div>
-        <div class="card-eyebrow">保险科普</div>
-        <h3 class="card-title">保险简史：保险的本质是"风险共担"</h3>
-        <p class="card-excerpt">从古代航海到现代金融，保险的本质是"花小钱担大事"的一种金融工具。先懂保险，才能买对保险……</p>
-        <div class="card-meta">Tesla妈妈 · 阅读 8 分钟</div>
-      </a>
-      <a href="article-4.html" class="article-card featured-card">
-        <div class="card-number">03</div>
-        <div class="card-eyebrow">资产配置</div>
-        <h3 class="card-title">家庭资产配置生命周期</h3>
-        <p class="card-excerpt">青年求增值，壮年控风险，退休享晚年——从家庭资产配置的角度，理解保险作为家庭生活"稳定器"的含义……</p>
-        <div class="card-meta">Tesla妈妈 · 阅读 7 分钟</div>
-      </a>
+
+    <h2>Dream It Possible</h2>
+
+    <p>最后，一首我最喜欢的歌，与君共勉：</p>
+
+    <blockquote>
+      <p>The past, is everything we were don't make us who we are. So I'll dream, until I make it real, and all I see is stars.</p>
+    </blockquote>
+
+  </article>
+
+  <div class="article-tags">
+    <span class="article-tag">全职妈妈</span>
+    <span class="article-tag">保险经纪</span>
+    <span class="article-tag">个人故事</span>
+    <span class="article-tag">Dream It Possible</span>
+  </div>
+
+  <section class="author-card-section">
+    <div class="author-card-inner">
+      <div class="author-photo"><img src="文末.jpg" alt="Tesla妈妈" style="width:100%;height:100%;object-fit:cover;"/></div>
+      <div class="author-info">
+        <h4>Tesla妈妈</h4>
+        <div class="title">专业保险经纪人</div>
+        <p>浙大心理系在职研究生，从全职妈妈到专业保险经纪人。从客户的亲身经历中感受保险经纪人的价值。</p>
+        <div class="author-contact">
+          <div class="author-qr"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="author-contact-text">
+            <strong>扫码添加微信</strong><br/>
+            预约免费家庭保障诊断
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <hr class="divider" style="max-width: var(--max-w); margin: 0 auto;" />
-
-  <!-- About Teaser -->
-  <section class="section">
-    <div class="about-teaser">
-      <div class="about-image">
-        <img src="mq11vkz2-魏娜职业照2的副本2.jpg" alt="Tesla妈妈 — 专业保险经纪人" />
-      </div>
-      <div class="about-content">
-        <div class="eyebrow" style="margin-bottom: 16px;">关于我</div>
-        <h2 class="display-md">保险的坑让我填，你负责轻松前行</h2>
-        <p class="body-lg">浙大心理系出身，做过幼儿教育和程序员，现在是专业保险经纪人。保险经纪人不仅是一份工作，更是一份人文关怀，一份关爱，一个朋友。从客户变身员工，只因深感专业保险经纪人的价值。</p>
-        <a href="about.html" class="hero-cta">
-          阅读完整介绍
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header"><div class="eyebrow">相关推荐</div></div>
+      <div class="related-grid">
+        <a href="article-1.html" class="related-card">
+          <div class="card-eyebrow">个人介绍</div>
+          <h3>为什么选我？认准专业的保险经纪人</h3>
+          <p>六大理由告诉你，为什么保险经纪人更值得信赖……</p>
+          <div class="meta">Tesla妈妈 · 5 min</div>
         </a>
-        <div class="about-signature">Tesla妈妈</div>
+        <a href="article-2.html" class="related-card">
+          <div class="card-eyebrow">保险科普</div>
+          <h3>保险简史：保险的本质是"风险共担"</h3>
+          <p>"花小钱担大事"的金融互助工具……</p>
+          <div class="meta">Tesla妈妈 · 8 min</div>
+        </a>
+        <a href="article-4.html" class="related-card">
+          <div class="card-eyebrow">资产配置</div>
+          <h3>家庭资产配置生命周期</h3>
+          <p>青年求增值，壮年控风险，退休享晚年……</p>
+          <div class="meta">Tesla妈妈 · 7 min</div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Banner -->
-  <section class="cta-banner">
-    <div class="cta-inner">
-      <div>
-        <h2 class="display-md">预约一对一咨询</h2>
-        <p class="lead">为您的家庭量身定制保障方案，从需求分析到方案设计，全程专业服务。</p>
-      </div>
-      <div class="cta-qr">
-        <div class="qr-box"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
-        <span class="cta-qr-label">扫码添加微信</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
@@ -224,15 +223,11 @@
       </div>
       <div>
         <div class="footer-heading">联系方式</div>
-        <ul class="footer-links">
-          <li>微信：扫码添加</li>
-        </ul>
+        <ul class="footer-links"><li>微信：扫码添加</li></ul>
         <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2026 Tesla妈妈 · 保留所有权利
-    </div>
+    <div class="footer-bottom">© 2026 Tesla妈妈 · 保留所有权利</div>
   </footer>
 
   <script>
@@ -240,6 +235,20 @@
       var style = document.createElement('style');
       style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
       document.head.appendChild(style);
+    })();
+    (function() {
+      var bar = document.getElementById('progressBar');
+      var articleBody = document.querySelector('.article-body');
+      if (!bar || !articleBody) return;
+      function updateProgress() {
+        var rect = articleBody.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = -rect.top;
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
     })();
   </script>
 

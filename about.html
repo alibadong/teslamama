@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>关于我 — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .profile-header {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px var(--gutter) 64px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .profile-photo {
+      aspect-ratio: 3/4;
+      background: oklch(94% 0.005 95);
+      border: 1px solid var(--border);
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+      overflow: hidden;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .profile-info .eyebrow { margin-bottom: 20px; }
+    .profile-name { margin-bottom: 12px; }
+    .profile-title-line {
+      font: 400 18px/1.5 var(--font-body);
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .profile-meta {
+      display: flex;
+      gap: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-label {
+      font: 500 10px/1 var(--font-mono);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .meta-value { font: 500 15px/1.3 var(--font-body); }
+
+    .bio-section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter) 80px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+    }
+    .bio-content { max-width: 640px; }
+    .bio-content h2 { margin-bottom: 24px; }
+    .bio-content p {
+      font: 400 16px/1.8 var(--font-body);
+      color: oklch(35% 0.015 70);
+      margin-bottom: 20px;
+    }
+    .bio-content p:last-child { margin-bottom: 0; }
+
+    .timeline-section { border-top: 1px solid var(--border); }
+    .timeline-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px var(--gutter);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+    }
+    .timeline-layout .section-label {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+    .section-label .eyebrow { margin-bottom: 8px; }
+    .section-label .display-md { font-size: 24px; }
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--border);
+    }
+    .timeline-item { position: relative; padding-bottom: 40px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .timeline-year {
+      font: 500 12px/1 var(--font-mono);
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .timeline-title { font: 600 17px/1.3 var(--font-display); margin-bottom: 6px; }
+    .timeline-desc { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+
+    .credentials-section { border-top: 1px solid var(--border); }
+    .credentials-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px var(--gutter);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+    }
+    .credential-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .credential-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .credential-card .card-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+    .credential-card h4 { font: 600 15px/1.3 var(--font-display); margin-bottom: 6px; }
+    .credential-card p { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+
+    .philosophy-section { border-top: 1px solid var(--border); background: var(--surface); }
+    .philosophy-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px var(--gutter);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+    }
+    .philosophy-items { display: flex; flex-direction: column; gap: 0; }
+    .philosophy-item { padding: 32px 0; border-bottom: 1px solid var(--border); }
+    .philosophy-item:first-child { padding-top: 0; }
+    .philosophy-item:last-child { border-bottom: none; }
+    .philosophy-num {
+      font: 400 11px/1 var(--font-mono);
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+    .philosophy-item h4 { font: 600 20px/1.3 var(--font-display); margin-bottom: 10px; }
+    .philosophy-item p { font: 400 15px/1.7 var(--font-body); color: var(--muted); max-width: 520px; }
+
+    @media (max-width: 1024px) {
+      .profile-header, .bio-section, .timeline-layout, .credentials-layout, .philosophy-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .profile-photo { max-width: 280px; position: static; }
+    }
+    @media (max-width: 768px) {
+      .profile-meta { flex-direction: column; gap: 20px; }
+      .credential-grid { grid-template-columns: 1fr; }
+      .timeline { padding-left: 24px; }
+      .timeline-item::before { left: -28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html" class="active">关于我</a></li>
+        <li><a href="articles.html">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Profile Header -->
+  <header class="profile-header">
+    <div class="profile-photo">
+      <img src="mq11vkz2-魏娜职业照2的副本2.jpg" alt="Tesla妈妈 — 专业保险经纪人" />
+    </div>
+    <div class="profile-info">
+      <div class="eyebrow">关于我</div>
+      <h1 class="display-lg profile-name">Tesla妈妈</h1>
+      <p class="profile-title-line">专业保险经纪人</p>
+      <div class="profile-meta">
+        <div class="meta-item">
+          <div class="meta-label">教育背景</div>
+          <div class="meta-value">浙大应用心理学在职研究生</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">从业经验</div>
+          <div class="meta-value">8年保险经纪人</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">所获荣誉</div>
+          <div class="meta-value">多年全球寿险百万圆桌会员MDRT</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bio -->
+  <section class="bio-section">
+    <div class="bio-spacer"></div>
+    <div class="bio-content">
+      <h2 class="display-md">我的故事</h2>
+      <p>大家好，我是Tesla妈妈。在成为保险经纪人之前，我的人生经历了几个有趣的阶段——浙江大学心理系应用心理学硕士读了两年半，做过幼儿教育，还当过程序猿。这些看似跨度很大的经历，实际上都在为我现在的职业做准备。</p>
+      <p>心理学的训练让我擅长倾听和理解客户的真实需求；幼儿教育的经验让我对家庭保障有了切身的体会；程序员的逻辑思维则帮助我在复杂的产品条款中快速抓住关键。生完Tesla宝宝后，我做了一段时间的全职妈妈，自学了大量育儿课程和书籍，希望用科学的方式陪伴孩子成长。</p>
+      <p>转折点来自为Tesla买保险。在网上搜索、和几位保险代理沟通之后，我发现买一份保险真的是一件很困难的事情。后来机缘巧合，遇到了李丽英老师——她始终站在我的角度解决痛点问题，被她的专业和诚心打动，我把全家的保障计划都交给了她。进而促使我深入了解保险经纪行业，最终从客户变成了保险经纪人。</p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="timeline-layout">
+      <div class="section-label">
+        <div class="eyebrow">成长历程</div>
+        <h2 class="display-md">我的旅程</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">入行</div>
+          <div class="timeline-title">成为专业保险经纪人</div>
+          <div class="timeline-desc">加入睿城精英团队，团队现有200多人，2024年、2025年业绩稳居全国前三甲。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">转型契机</div>
+          <div class="timeline-title">从客户变身员工</div>
+          <div class="timeline-desc">为Tesla宝宝购买保险的过程中，深感保险经纪人的专业价值。从被服务者转变为服务者，希望将这份人文关怀传递给更多家庭。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">全职妈妈</div>
+          <div class="timeline-title">科学育儿的自学之路</div>
+          <div class="timeline-desc">全职带娃期间，自学循证医学课程、阅读大量育儿书籍，用科学的头脑迎接Tesla的到来。专业的事交给专业的人——身体健康交给家庭医生。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">浙大求学</div>
+          <div class="timeline-title">浙江大学应用心理学硕士</div>
+          <div class="timeline-desc">武汉科技大学本科毕业后，在浙江大学心理系攻读应用心理学硕士两年半。这段经历让我深刻理解家庭教育和亲子关系的重要性。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials — 六大理由 -->
+  <section class="credentials-section">
+    <div class="credentials-layout">
+      <div class="section-label">
+        <div class="eyebrow">为什么选我</div>
+        <h2 class="display-md">六大理由</h2>
+      </div>
+      <div class="credential-grid">
+        <div class="credential-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-5"/></svg>
+          <h4>始终站在客户立场</h4>
+          <p>保险经纪人受客户委托，代表客户利益，这是《保险法》给出的定义，也是与保险代理人的根本区别。</p>
+        </div>
+        <div class="credential-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg>
+          <h4>提供定制方案</h4>
+          <p>需求分析、量身定做，让你不买错；筛选公司、严选产品，让你不买贵。</p>
+        </div>
+        <div class="credential-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <h4>对接所有保险公司</h4>
+          <p>选我就等于联系上了所有保险公司，货比三家，非标体可同时投多家，争取最好的承保结果。</p>
+        </div>
+        <div class="credential-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15V3M6 9l6-6 6 6"/><path d="M4 21h16"/></svg>
+          <h4>专业四步服务</h4>
+          <p>需求分析与风险识别、定制方案、专业投保协助、保后服务——一步都不能少，每步都很重要。</p>
+        </div>
+        <div class="credential-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+          <h4>尊重客户隐私</h4>
+          <p>只有客户如实相告才能做好需求分析和风险规避，而尊重隐私、保护隐私是基本素质和要求。</p>
+        </div>
+        <div class="credential-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h4>团队强大</h4>
+          <p>睿城精英团队200多人，团队中总能找到一位在特定领域经验丰富的人帮助客户解决特殊问题。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="philosophy-section">
+    <div class="philosophy-layout">
+      <div class="section-label">
+        <div class="eyebrow">服务理念</div>
+        <h2 class="display-md">我的坚持</h2>
+      </div>
+      <div class="philosophy-items">
+        <div class="philosophy-item">
+          <div class="philosophy-num">01</div>
+          <h4>先懂保险，才能买对保险</h4>
+          <p>我一直倡导这个理念。保险不是简单的商品买卖，而是一种高级别的金融工具。理解它的本质——"风险共担"和"花小钱担大事"，才能做出正确的决策。</p>
+        </div>
+        <div class="philosophy-item">
+          <div class="philosophy-num">02</div>
+          <h4>专业的事情交给专业的人</h4>
+          <p>从自身的经历出发，买一份保险真的是一件很困难的事情。即便学了再多，也只学会了一丁点皮毛。保险经纪人不仅是一份工作，更是一份人文关怀、一份关爱、一个朋友。</p>
+        </div>
+        <div class="philosophy-item">
+          <div class="philosophy-num">03</div>
+          <h4>保险的坑让我填，你负责轻松前行</h4>
+          <p>每一个保障计划都从客户的真实需求出发，从家庭财务诊断、风险评估、方案设计到长期跟踪服务，确保方案真正回应客户的长期需求。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner" style="background: var(--fg);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter); display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center;">
+      <div>
+        <h2 class="display-md" style="color: oklch(95% 0.004 95); margin-bottom: 12px;">希望了解更多？</h2>
+        <p class="lead" style="color: oklch(70% 0.012 70);">欢迎通过微信联系我，预约一次免费的家庭保障诊断。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="width: 140px; height: 140px; background: oklch(95% 0.004 95); display: grid; place-items: center; font: 400 13px/1.4 var(--font-body); color: oklch(48% 0.012 70); text-align: center; padding: 12px;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+        <span style="font: 400 13px/1 var(--font-body); color: oklch(70% 0.012 70);">扫码添加微信</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links">
+          <li>微信：扫码添加</li>
+        </ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tesla妈妈 · 保留所有权利
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+  </script>
+
+</body>
+</html>

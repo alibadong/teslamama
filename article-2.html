@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>保险简史：保险的本质是"风险共担" — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0%; transition: width 0.1s linear; }
+    .back-link { max-width: 800px; margin: 0 auto; padding: 32px var(--gutter) 0; }
+    .back-link a { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .back-link a:hover { color: var(--fg); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-header { max-width: 800px; margin: 0 auto; padding: 48px var(--gutter) 0; }
+    .article-header .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .article-header h1 { font: 700 clamp(28px, 4.5vw, 42px)/1.15 var(--font-display); letter-spacing: -0.015em; margin-bottom: 24px; }
+    .article-header .lead { margin-bottom: 32px; max-width: 640px; }
+    .article-meta-row { display: flex; gap: 32px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .meta-author { display: flex; align-items: center; gap: 12px; }
+    .meta-avatar { width: 36px; height: 36px; background: oklch(94% 0.005 95); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-display); color: var(--muted); }
+    .meta-author-name { font: 500 14px/1 var(--font-body); }
+    .meta-author-title { font: 400 12px/1 var(--font-body); color: var(--muted); margin-top: 2px; }
+    .meta-info { display: flex; gap: 24px; font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 80px; }
+    .article-body p { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 28px; }
+    .article-body h2 { font: 600 clamp(22px, 2.5vw, 28px)/1.3 var(--font-display); margin-top: 56px; margin-bottom: 20px; padding-top: 24px; }
+    .article-body blockquote { margin: 48px 0; padding: 32px 0 32px 32px; border-left: 3px solid var(--accent); }
+    .article-body blockquote p { font: 600 clamp(19px, 2vw, 22px)/1.6 var(--font-display); color: var(--fg); margin-bottom: 0; }
+    .article-body .callout { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 40px 0; }
+    .article-body .callout-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .article-body .callout p { font: 400 15px/1.7 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 0; }
+    .article-body ul, .article-body ol { margin-bottom: 28px; padding-left: 24px; }
+    .article-body li { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 8px; }
+    .article-tags { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .article-tag { font: 400 12px/1 var(--font-mono); padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+    .author-card-section { border-top: 1px solid var(--border); }
+    .author-card-inner { max-width: 680px; margin: 0 auto; padding: 48px var(--gutter); display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+    .author-photo { width: 80px; height: 100px; background: oklch(94% 0.005 95); border: 1px solid var(--border); display: grid; place-items: center; font: 400 11px/1 var(--font-body); color: var(--muted); text-align: center; }
+    .author-info h4 { font: 600 18px/1.3 var(--font-display); margin-bottom: 4px; }
+    .author-info .title { font: 400 13px/1 var(--font-body); color: var(--muted); margin-bottom: 16px; }
+    .author-info p { font: 400 14px/1.6 var(--font-body); color: var(--muted); margin-bottom: 20px; }
+    .author-contact { display: flex; gap: 24px; align-items: center; }
+    .author-qr { width: 72px; height: 72px; border: none; overflow: hidden; display: grid; place-items: center; font: 400 9px/1.2 var(--font-body); color: var(--muted); text-align: center; padding: 4px; }
+    .author-contact-text { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+    .author-contact-text strong { color: var(--fg); font-weight: 500; }
+    .related-section { border-top: 1px solid var(--border); }
+    .related-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .related-header { margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .related-card { display: block; padding-top: 24px; border-top: 1px solid var(--border); transition: opacity 0.15s; }
+    .related-card:hover { opacity: 0.7; }
+    .related-card .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .related-card h3 { font: 600 clamp(17px, 1.8vw, 20px)/1.3 var(--font-display); margin-bottom: 10px; }
+    .related-card p { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+    .related-card .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); margin-top: 12px; letter-spacing: 0.04em; }
+    @media (max-width: 768px) {
+      .article-header { padding-top: 32px; }
+      .article-meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .meta-info { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; gap: 24px; }
+      .author-card-inner { grid-template-columns: 1fr; }
+      .author-contact { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="articles.html" class="active">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="back-link">
+    <a href="articles.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      返回文章列表
+    </a>
+  </div>
+
+  <header class="article-header">
+    <div class="card-eyebrow">保险科普</div>
+    <h1>保险简史：保险的本质是"风险共担"，是"花小钱担大事"的一种金融工具</h1>
+    <p class="lead">先懂保险，才能买对保险。从保险历史出发，看看保险的本质和我们应该以怎样的姿势和心态去理解保险。</p>
+    <div class="article-meta-row">
+      <div class="meta-author">
+        <div class="meta-avatar">T</div>
+        <div>
+          <div class="meta-author-name">Tesla妈妈</div>
+          <div class="meta-author-title">专业保险经纪人</div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <span>Tesla妈妈</span>
+        <span>阅读 8 分钟</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>大家好，我是Tesla妈妈，先懂保险，才能买对保险，是我一直倡导的理念，那就首先从保险历史开始吧。</p>
+
+    <p>关于保险历史，Tesla妈妈并非历史学家，并不能像教科书似的讲解，但是我们可以从中看到一些问题的本质：</p>
+
+    <ul>
+      <li>商品的交换买卖自古都有，因为它是实物很好理解，但是保险的诞生颠覆了"实物交换"的逻辑，是一种高级别的玩法。那么我们今天到底应该以怎样的"姿势"和"心态"去理解保险呢？</li>
+      <li>纵观历史，到底对我们今天保险理财有什么启示呢？</li>
+      <li>保险就是保风险，那么它本身有风险吗？</li>
+    </ul>
+
+    <h2>保险起源于航海</h2>
+
+    <p>现代意义的保险起源于航海。我想是因为航海是当时风险最大但收益也是最高的一项活动吧。其实我们面临的各类"风险"具有客观性和普遍性，这些风险来自自然的灾害、意外的事故和人为的祸害。保险起到了防范、转移、化解和管理风险的作用。社会和技术的进步化解了很多风险，但也产生了很多新的风险。</p>
+
+    <h2>保险的本质是"风险共担"</h2>
+
+    <blockquote>
+      <p>保险的本质是"风险共担"，是"花小钱担大事"的一种金融互助工具。</p>
+    </blockquote>
+
+    <p>古埃及石匠行业通过收取会费来补贴会员的丧葬费，我想这是我们所知道的最早的寿险吧。这种互助机制延续至今，本质上没有改变——每个人出一小笔钱，形成一个大池子，当其中有人遭遇不幸时，这个池子就能提供帮助。</p>
+
+    <h2>保险经纪的里程碑</h2>
+
+    <p>保险经纪公司及保险经纪人的出现是保险业发展的一个里程碑事件，与"保险代理"有本质区别。也许你还经历过"一个人卖保险全家不要脸"这类场景感十足的画面。Tesla妈妈需要普及一下：保险经纪的立场始终是站在客户这边，而非保险公司的。</p>
+
+    <div class="callout">
+      <div class="callout-label">核心区别</div>
+      <p>保险代理人代表保险公司利益；保险经纪人代表客户利益。这是《保险法》明确定义的。</p>
+    </div>
+
+    <h2>保险是家庭生活的"稳定器"</h2>
+
+    <p>保险作为家庭资产配置的重要手段，是家庭生活的"稳定器"。关于这一点，且听Tesla妈妈下回《家庭资产配置生命周期》分解。</p>
+
+    <div class="callout">
+      <div class="callout-label">小结</div>
+      <p>理解保险的正确姿势和心态：保险诞生于风险最高收益也最高的航海；本质是"风险共担"和"花小钱担大事"；保险经纪人始终站在客户这边；保险是家庭生活的"稳定器"。</p>
+    </div>
+
+  </article>
+
+  <div class="article-tags">
+    <span class="article-tag">保险简史</span>
+    <span class="article-tag">风险共担</span>
+    <span class="article-tag">保险科普</span>
+    <span class="article-tag">保险经纪</span>
+  </div>
+
+  <section class="author-card-section">
+    <div class="author-card-inner">
+      <div class="author-photo">照片</div>
+      <div class="author-info">
+        <h4>Tesla妈妈</h4>
+        <div class="title">专业保险经纪人</div>
+        <p>浙大应用心理学在职研究生，从全职妈妈到专业保险经纪人。始终坚持"先懂保险，才能买对保险"的理念。</p>
+        <div class="author-contact">
+          <div class="author-qr"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="author-contact-text">
+            <strong>扫码添加微信</strong><br/>
+            预约免费家庭保障诊断
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header"><div class="eyebrow">相关推荐</div></div>
+      <div class="related-grid">
+        <a href="article-1.html" class="related-card">
+          <div class="card-eyebrow">个人介绍</div>
+          <h3>为什么选我？认准专业的保险经纪人</h3>
+          <p>六大理由告诉你，为什么保险经纪人更值得信赖……</p>
+          <div class="meta">Tesla妈妈 · 5 min</div>
+        </a>
+        <a href="article-4.html" class="related-card">
+          <div class="card-eyebrow">资产配置</div>
+          <h3>家庭资产配置生命周期</h3>
+          <p>青年求增值，壮年控风险，退休享晚年……</p>
+          <div class="meta">Tesla妈妈 · 7 min</div>
+        </a>
+        <a href="article-5.html" class="related-card">
+          <div class="card-eyebrow">社会保障</div>
+          <h3>"社保"前面加"基本"两字，啥意思？</h3>
+          <p>一图读懂社会保障体系……</p>
+          <div class="meta">Tesla妈妈 · 6 min</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links"><li>微信：扫码添加</li></ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Tesla妈妈 · 保留所有权利</div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+    (function() {
+      var bar = document.getElementById('progressBar');
+      var articleBody = document.querySelector('.article-body');
+      if (!bar || !articleBody) return;
+      function updateProgress() {
+        var rect = articleBody.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = -rect.top;
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>妥妥的我爱我家，据说这图至少能管三代 — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0%; transition: width 0.1s linear; }
+    .back-link { max-width: 800px; margin: 0 auto; padding: 32px var(--gutter) 0; }
+    .back-link a { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .back-link a:hover { color: var(--fg); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-header { max-width: 800px; margin: 0 auto; padding: 48px var(--gutter) 0; }
+    .article-header .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .article-header h1 { font: 700 clamp(32px, 5vw, 48px)/1.15 var(--font-display); letter-spacing: -0.015em; margin-bottom: 24px; }
+    .article-header .lead { margin-bottom: 32px; max-width: 640px; }
+    .article-meta-row { display: flex; gap: 32px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .meta-author { display: flex; align-items: center; gap: 12px; }
+    .meta-avatar { width: 36px; height: 36px; background: oklch(94% 0.005 95); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-display); color: var(--muted); }
+    .meta-author-name { font: 500 14px/1 var(--font-body); }
+    .meta-author-title { font: 400 12px/1 var(--font-body); color: var(--muted); margin-top: 2px; }
+    .meta-info { display: flex; gap: 24px; font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 80px; }
+    .article-body p { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 28px; }
+    .article-body h2 { font: 600 clamp(22px, 2.5vw, 28px)/1.3 var(--font-display); margin-top: 56px; margin-bottom: 20px; padding-top: 24px; }
+    .article-body h3 { font: 600 20px/1.3 var(--font-display); margin-top: 40px; margin-bottom: 16px; }
+    .article-body blockquote { margin: 48px 0; padding: 32px 0 32px 32px; border-left: 3px solid var(--accent); }
+    .article-body blockquote p { font: 600 clamp(19px, 2vw, 22px)/1.6 var(--font-display); color: var(--fg); margin-bottom: 0; }
+    .article-body .callout { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 40px 0; }
+    .article-body .callout-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .article-body .callout p { font: 400 15px/1.7 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 0; }
+    .article-tags { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .article-tag { font: 400 12px/1 var(--font-mono); padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+    .author-card-section { border-top: 1px solid var(--border); }
+    .author-card-inner { max-width: 680px; margin: 0 auto; padding: 48px var(--gutter); display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+    .author-photo { width: 80px; height: 100px; background: oklch(94% 0.005 95); border: 1px solid var(--border); display: grid; place-items: center; font: 400 11px/1 var(--font-body); color: var(--muted); text-align: center; }
+    .author-info h4 { font: 600 18px/1.3 var(--font-display); margin-bottom: 4px; }
+    .author-info .title { font: 400 13px/1 var(--font-body); color: var(--muted); margin-bottom: 16px; }
+    .author-info p { font: 400 14px/1.6 var(--font-body); color: var(--muted); margin-bottom: 20px; }
+    .author-contact { display: flex; gap: 24px; align-items: center; }
+    .author-qr { width: 72px; height: 72px; border: none; overflow: hidden; display: grid; place-items: center; font: 400 9px/1.2 var(--font-body); color: var(--muted); text-align: center; padding: 4px; }
+    .author-contact-text { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+    .author-contact-text strong { color: var(--fg); font-weight: 500; }
+    .related-section { border-top: 1px solid var(--border); }
+    .related-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .related-header { margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .related-card { display: block; padding-top: 24px; border-top: 1px solid var(--border); transition: opacity 0.15s; }
+    .related-card:hover { opacity: 0.7; }
+    .related-card .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .related-card h3 { font: 600 clamp(17px, 1.8vw, 20px)/1.3 var(--font-display); margin-bottom: 10px; }
+    .related-card p { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+    .related-card .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); margin-top: 12px; letter-spacing: 0.04em; }
+    @media (max-width: 768px) {
+      .article-header { padding-top: 32px; }
+      .article-meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .meta-info { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; gap: 24px; }
+      .author-card-inner { grid-template-columns: 1fr; }
+      .author-contact { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="articles.html" class="active">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="back-link">
+    <a href="articles.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      返回文章列表
+    </a>
+  </div>
+
+  <header class="article-header">
+    <div class="card-eyebrow">家庭保障</div>
+    <h1>妥妥的我爱我家，据说这图至少能管三代</h1>
+    <p class="lead">一份完整的家庭保障计划长什么样？不讲产品，先看清"大局"——保障目标、给谁买、产品大类，三个维度帮你理清家庭保险的底层逻辑。</p>
+    <div class="article-meta-row">
+      <div class="meta-author">
+        <div class="meta-avatar">T</div>
+        <div>
+          <div class="meta-author-name">Tesla妈妈</div>
+          <div class="meta-author-title">专业保险经纪人</div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <span>Tesla妈妈</span>
+        <span>阅读 10 分钟</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>本文偏中观层面，希望能将一份专业的家庭保障计划为大家梳理清楚。这里不讲产品，我相信看到这篇文章的同学，已经对各类产品有所了解了，为什么还没下手呢？估计是还没把这个"局"看清楚吧。</p>
+
+    <p>我们将一起探讨三个问题：对家庭、对人生的看法；为什么先看"大局"比先看产品更重要；一份专业的家庭保障计划它的逻辑是什么？</p>
+
+    <h2>一、保障目标：四个等级，从下到上</h2>
+
+    <p>保险是家庭的"稳定器"，它的本质是"保障"功能。管他明天会怎么样，过好今天，但要为明天做好保障，为自己更为家人。我们将保障分了四个等级和优先顺序：</p>
+
+    <h3>1. 健康保障</h3>
+
+    <p>可能大家首先想到的是"医保"，所谓医保就是"基本医疗保险"，范围有限，医保管不了的就交给商业医疗保险。很多人对保险的认识是从生了大病、或者担心生大病开始的。Tesla妈妈当初自己买保险时的初心就是：没钱，病不起，不想因病返贫。所以，健康保障计划放首要考虑的一层。</p>
+
+    <h3>2. 家庭可持续性保障</h3>
+
+    <p>30岁以后虽然现金流充裕，但负债也不少，上有老下有小，这个阶段的核心是"控风险"。什么风险？现金流断了。企业如此，家庭也是如此，不怕负债，就怕断了现金流。</p>
+
+    <h3>3. 资产储蓄型保障</h3>
+
+    <p>趁自己现金流充沛，加大对抗风险的资产配置力度。年金保险的优势在于：流动性好，一次性取或细水长流都行；专项储蓄，收益稳定；安全性高，保险资金涉及民生安稳是国家严管的。</p>
+
+    <h3>4. 资产传承性保障</h3>
+
+    <p>如果你是亿万身家，希望给一个不按继承顺序的人一笔财富——直接银行取出来给？买别墅？给股权？家族信托门槛比较高。终身寿险，想给谁给谁，还有税的优势。</p>
+
+    <blockquote>
+      <p>保险是家庭的"稳定器"，保障目标从健康到可持续、到储蓄、到传承，层层递进。</p>
+    </blockquote>
+
+    <h2>二、给谁买：优先保经济支柱</h2>
+
+    <p>家庭不仅仅是亲人关系，也是一种经济关系。在给谁买的问题上，往往一些客户很难达成一致意见，因为看到了亲人关系，而没有看到经济关系这一层。希望大家尽可能理性，从家庭大局出发。</p>
+
+    <p>从专业的角度，一定是优先保经济支柱的。</p>
+
+    <h2>三、产品大类："吉祥四宝"</h2>
+
+    <p>这里重点讲每个家庭必备的"吉祥四宝"。先不着急去了解眼花缭乱的产品对比，先了解基本原理。</p>
+
+    <h3>1. 重疾险——为什么放到首位</h3>
+
+    <p>确诊得了约定的重大疾病，又达到理赔条件，保险公司赔付保额。重疾险的作用不单是赔付一笔钱用于治疗，还包弥补因这场大病带来的收入损失，让你的家庭生活质量不下降。建议先整理病史和体况，再购买，数据说话，科学决策，全家配齐。</p>
+
+    <h3>2. 医疗险——为什么也列入必备</h3>
+
+    <p>医疗险可以补偿医疗费用，包括门诊、急诊、住院、手术等费用，主要转移高额治疗费用的风险。重疾险保障不因大病降低生活质量，医疗险保障把病治好。二者搭配，保障计划更"保险"。</p>
+
+    <h3>3. 意外险——不可小觑</h3>
+
+    <p>便宜，杠杆大。一般保障时间一年就够了，可根据实际情况随时调整。经济支柱可适当上调保额，建议全家配齐。</p>
+
+    <h3>4. 定期寿险——请神请佛还请它</h3>
+
+    <p>定期寿险主要防止家庭经济支柱由于身故等导致家庭现金流断裂。中国人图吉利也图心安，"请"定期寿险偏理性，感性加理性，以求心安。</p>
+
+    <div class="callout">
+      <div class="callout-label">小结</div>
+      <p>先看清完整家庭保障计划的全局理念和逻辑，比直接比较产品更重要。重疾、医疗、意外和定期寿险是家庭保障的基石计划，起"稳定器"的作用，然后重点考虑年金险。具体怎么搭配比较专业，建议找专业顾问。</p>
+    </div>
+
+  </article>
+
+  <div class="article-tags">
+    <span class="article-tag">家庭保障</span>
+    <span class="article-tag">保障规划</span>
+    <span class="article-tag">重疾险</span>
+    <span class="article-tag">医疗险</span>
+    <span class="article-tag">定期寿险</span>
+  </div>
+
+  <section class="author-card-section">
+    <div class="author-card-inner">
+      <div class="author-photo">照片</div>
+      <div class="author-info">
+        <h4>Tesla妈妈</h4>
+        <div class="title">专业保险经纪人</div>
+        <p>浙大应用心理学在职研究生，从全职妈妈到专业保险经纪人。始终站在客户立场，提供家庭保障规划全流程服务。</p>
+        <div class="author-contact">
+          <div class="author-qr"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="author-contact-text">
+            <strong>扫码添加微信</strong><br/>
+            预约免费家庭保障诊断
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header">
+        <div class="eyebrow">相关推荐</div>
+      </div>
+      <div class="related-grid">
+        <a href="article-4.html" class="related-card">
+          <div class="card-eyebrow">资产配置</div>
+          <h3>家庭资产配置生命周期</h3>
+          <p>青年求增值，壮年控风险，退休享晚年……</p>
+          <div class="meta">Tesla妈妈 · 7 min</div>
+        </a>
+        <a href="article-7.html" class="related-card">
+          <div class="card-eyebrow">投保决策</div>
+          <h3>深度好文：口红一样的投保</h3>
+          <p>选保三原则——挑选时像理科男买车，下手时像买口红一样毫不犹豫……</p>
+          <div class="meta">Tesla妈妈 · 8 min</div>
+        </a>
+        <a href="article-8.html" class="related-card">
+          <div class="card-eyebrow">理赔指南</div>
+          <h3>说好不哭，买个保险，赔不了？</h3>
+          <p>4条实在建议，解决90%的理赔纠纷问题……</p>
+          <div class="meta">Tesla妈妈 · 7 min</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links">
+          <li>微信：扫码添加</li>
+        </ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tesla妈妈 · 保留所有权利
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+    (function() {
+      var bar = document.getElementById('progressBar');
+      var articleBody = document.querySelector('.article-body');
+      if (!bar || !articleBody) return;
+      function updateProgress() {
+        var rect = articleBody.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = -rect.top;
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    })();
+  </script>
+
+</body>
+</html>

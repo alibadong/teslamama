@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "3 个设计方向对比",
+  "entry": "direction-chooser.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-05T13:03:43.212Z",
+  "updatedAt": "2026-06-05T13:03:43.216Z",
+  "metadata": {
+    "identifier": "direction-chooser",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}

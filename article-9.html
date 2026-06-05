@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>实锤！"体检报告"中的这些"问题"也可以投保，上千份实测案例让你放心 — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0%; transition: width 0.1s linear; }
+    .back-link { max-width: 800px; margin: 0 auto; padding: 32px var(--gutter) 0; }
+    .back-link a { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .back-link a:hover { color: var(--fg); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-header { max-width: 800px; margin: 0 auto; padding: 48px var(--gutter) 0; }
+    .article-header .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .article-header h1 { font: 700 clamp(32px, 5vw, 48px)/1.15 var(--font-display); letter-spacing: -0.015em; margin-bottom: 24px; }
+    .article-header .lead { margin-bottom: 32px; max-width: 640px; }
+    .article-meta-row { display: flex; gap: 32px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .meta-author { display: flex; align-items: center; gap: 12px; }
+    .meta-avatar { width: 36px; height: 36px; background: oklch(94% 0.005 95); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-display); color: var(--muted); }
+    .meta-author-name { font: 500 14px/1 var(--font-body); }
+    .meta-author-title { font: 400 12px/1 var(--font-body); color: var(--muted); margin-top: 2px; }
+    .meta-info { display: flex; gap: 24px; font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 80px; }
+    .article-body p { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 28px; }
+    .article-body h2 { font: 600 clamp(22px, 2.5vw, 28px)/1.3 var(--font-display); margin-top: 56px; margin-bottom: 20px; padding-top: 24px; }
+    .article-body h3 { font: 600 20px/1.3 var(--font-display); margin-top: 40px; margin-bottom: 16px; }
+    .article-body blockquote { margin: 48px 0; padding: 32px 0 32px 32px; border-left: 3px solid var(--accent); }
+    .article-body blockquote p { font: 600 clamp(19px, 2vw, 22px)/1.6 var(--font-display); color: var(--fg); margin-bottom: 0; }
+    .article-body .callout { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 40px 0; }
+    .article-body .callout-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .article-body .callout p { font: 400 15px/1.7 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 0; }
+    .case-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 32px 0; }
+    .case-card .case-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .case-card h3 { margin-top: 0; }
+    .case-card .case-detail { font: 400 15px/1.8 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 12px; padding-left: 20px; }
+    .case-card .case-result { font: 400 15px/1.7 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 0; padding-top: 16px; border-top: 1px solid var(--border); }
+    .article-tags { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .article-tag { font: 400 12px/1 var(--font-mono); padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+    .author-card-section { border-top: 1px solid var(--border); }
+    .author-card-inner { max-width: 680px; margin: 0 auto; padding: 48px var(--gutter); display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+    .author-photo { width: 80px; height: 100px; background: oklch(94% 0.005 95); border: 1px solid var(--border); display: grid; place-items: center; font: 400 11px/1 var(--font-body); color: var(--muted); text-align: center; }
+    .author-info h4 { font: 600 18px/1.3 var(--font-display); margin-bottom: 4px; }
+    .author-info .title { font: 400 13px/1 var(--font-body); color: var(--muted); margin-bottom: 16px; }
+    .author-info p { font: 400 14px/1.6 var(--font-body); color: var(--muted); margin-bottom: 20px; }
+    .author-contact { display: flex; gap: 24px; align-items: center; }
+    .author-qr { width: 72px; height: 72px; border: none; overflow: hidden; display: grid; place-items: center; font: 400 9px/1.2 var(--font-body); color: var(--muted); text-align: center; padding: 4px; }
+    .author-contact-text { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+    .author-contact-text strong { color: var(--fg); font-weight: 500; }
+    .related-section { border-top: 1px solid var(--border); }
+    .related-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .related-header { margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .related-card { display: block; padding-top: 24px; border-top: 1px solid var(--border); transition: opacity 0.15s; }
+    .related-card:hover { opacity: 0.7; }
+    .related-card .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .related-card h3 { font: 600 clamp(17px, 1.8vw, 20px)/1.3 var(--font-display); margin-bottom: 10px; }
+    .related-card p { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+    .related-card .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); margin-top: 12px; letter-spacing: 0.04em; }
+    @media (max-width: 768px) {
+      .article-header { padding-top: 32px; }
+      .article-meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .meta-info { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; gap: 24px; }
+      .author-card-inner { grid-template-columns: 1fr; }
+      .author-contact { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="articles.html" class="active">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="back-link">
+    <a href="articles.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      返回文章列表
+    </a>
+  </div>
+
+  <header class="article-header">
+    <div class="card-eyebrow">投保指南</div>
+    <h1>实锤！"体检报告"中的这些"问题"也可以投保，上千份实测案例让你放心</h1>
+    <p class="lead">收到不少咨询后发现，很多人拿到体检报告就担心自己买不了保险。整理了6个具有开创性的非标体实测案例，告诉你：大部分非标体都可以找到理想的承保产品。</p>
+    <div class="article-meta-row">
+      <div class="meta-author">
+        <div class="meta-avatar">T</div>
+        <div>
+          <div class="meta-author-name">Tesla妈妈</div>
+          <div class="meta-author-title">专业保险经纪人</div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <span>Tesla妈妈</span>
+        <span>阅读 8 分钟</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>"体检报告"出来后，收到不少咨询，特别理解你的心情。这促使我特别整理了6个在业内具有一定开创性的非标体案例。</p>
+
+    <p>过去1年内我们团队在师傅带领下服务的客户远超过1000个，我从中选了6个具有典型意义的案例，分享给你。主要目的是想说：请你放心，大部分非标体都是可以找到理想的承保产品的。</p>
+
+    <h2>6个非标体实测案例</h2>
+
+    <div class="case-card">
+      <div class="case-label">案例一</div>
+      <h3>女，33岁</h3>
+      <p class="case-detail">病史与体况：心电图显示心率过速；BMI 17点多一点，体重过轻；2014年做过甲状腺癌的手术。</p>
+      <p class="case-result"><strong>投保结果：</strong>在整理分析完病史和体况后，初步筛选了4家保险公司产品，其中3家直接拒保，1家给了标体承保结论，客户成功投保。</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">案例二</div>
+      <h3>男，32岁</h3>
+      <p class="case-detail">病史与体况：脂肪肝；幽门螺旋杆菌阳性；肝功能异常，并且有肝部肿大史；慢性萎缩性胃炎，并且有溃疡史。</p>
+      <p class="case-result"><strong>投保结果：</strong>在整理分析完病史和体况后，初步筛选了4家保险公司产品，1家要求胃部除外（就是胃部保险公司不保），1家要求参加体检，1家要求加费20%，最后1家给了标体承保结论，客户成功投保，因为客户非常希望投保胃部。</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">案例三</div>
+      <h3>女，34岁</h3>
+      <p class="case-detail">病史与体况：乳腺增生；子宫肌瘤；囊肿；内膜息肉；胆囊息肉；唐基抗原（肿瘤标志性指标，好几年都是升高的）；浅表性胃炎伴糜烂。</p>
+      <p class="case-result"><strong>投保结果：</strong>在整理分析完病史和体况后，初步筛选了5家保险公司产品，其中2家直接拒保，1家要求体检，另外2家给了标体承保结论，客户最后同时选择投保2家。</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">案例四</div>
+      <h3>女，34岁</h3>
+      <p class="case-detail">病史与体况：心电图异常和早搏；2009年，因为恶性葡萄胎做了手术切除，并做了5期化疗（恶性葡萄胎在重疾险条款中叫侵蚀性葡萄胎）。</p>
+      <p class="case-result"><strong>投保结果：</strong>客户从2014年开始就在寻求投保，但是一直没有成功，2014年成功生了一个宝宝，复查子宫的报告是正常的。在整理分析完病史和体况后，初步筛选了5家保险公司产品，其中2家直接拒保，1家下了体检函，1家要求复查心电图，最后1家比较意外地给了标体承保结论，客户成功投保。</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">案例五</div>
+      <h3>女，33岁</h3>
+      <p class="case-detail">病史与体况：卵巢成熟畸胎瘤；类癌（客户在做二次免疫组化的时候发现了类癌，类癌后期有一定的恶化倾斜）。</p>
+      <p class="case-result"><strong>投保结果：</strong>在整理分析完病史和体况后，初步筛选了4家保险公司产品，3家直接拒保，1家给了标体承保结论，客户成功投保。</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">案例六</div>
+      <h3>男，34岁</h3>
+      <p class="case-detail">病史与体况：2016年年初时因为劳累引发心悸，住院11天。当时诊断出心率失常、窦性心率过速、同时有房型收缩；住院时做了一个冠状动脉造影显示动脉管腔狭窄率10%；2017年4月份体检时发现血糖偏高6.23；有脂肪肝。</p>
+      <p class="case-result"><strong>投保结果：</strong>在整理分析完病史和体况后，初步筛选了5家保险公司产品，其中3家直接拒保，1家给延期结论（相当于拒保），1家给了标体承保结论。另外，还有体检报告中经常出现的"肺结节、乳腺结节、高血压"等也有很多成功投保的案例。</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">小结</div>
+      <p>1、拿到体检报告，看到种种问题，不用担心，只要你愿意配合，总能拿到理想的承保结果；2、年龄和体况是保险公司考量的两个重要因素，越年轻越好，体况问题越少越好。</p>
+    </div>
+
+  </article>
+
+  <div class="article-tags">
+    <span class="article-tag">非标体投保</span>
+    <span class="article-tag">体检报告</span>
+    <span class="article-tag">投保案例</span>
+    <span class="article-tag">健康告知</span>
+  </div>
+
+  <section class="author-card-section">
+    <div class="author-card-inner">
+      <div class="author-photo">照片</div>
+      <div class="author-info">
+        <h4>Tesla妈妈</h4>
+        <div class="title">专业保险经纪人</div>
+        <p>浙大应用心理学在职研究生，从全职妈妈到专业保险经纪人。始终站在客户立场，提供家庭保障规划全流程服务。</p>
+        <div class="author-contact">
+          <div class="author-qr"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="author-contact-text">
+            <strong>扫码添加微信</strong><br/>
+            预约免费家庭保障诊断
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header">
+        <div class="eyebrow">相关推荐</div>
+      </div>
+      <div class="related-grid">
+        <a href="article-10.html" class="related-card">
+          <div class="card-eyebrow">保险科普</div>
+          <h3>用数据解密为什么我对保险有这么多美丽的"误会"</h3>
+          <p>经济火车跑太快、风险保障意识未建立、销售人员参差不齐——三大根因深度解析……</p>
+          <div class="meta">Tesla妈妈 · 10 min</div>
+        </a>
+        <a href="article-8.html" class="related-card">
+          <div class="card-eyebrow">理赔指南</div>
+          <h3>说好不哭，买个保险，赔不了？4条实在建议</h3>
+          <p>心理预期错位是内因，合同理解错位是外因，四条建议解决90%的问题……</p>
+          <div class="meta">Tesla妈妈 · 7 min</div>
+        </a>
+        <a href="article-7.html" class="related-card">
+          <div class="card-eyebrow">投保决策</div>
+          <h3>深度好文：口红一样的投保</h3>
+          <p>选保三原则——挑选时像理科男买车，下手时像买口红一样毫不犹豫……</p>
+          <div class="meta">Tesla妈妈 · 8 min</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links">
+          <li>微信：扫码添加</li>
+        </ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tesla妈妈 · 保留所有权利
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+    (function() {
+      var bar = document.getElementById('progressBar');
+      var articleBody = document.querySelector('.article-body');
+      if (!bar || !articleBody) return;
+      function updateProgress() {
+        var rect = articleBody.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = -rect.top;
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    })();
+  </script>
+
+</body>
+</html>

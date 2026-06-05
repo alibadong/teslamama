@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "保险经纪人个人网站 — Editorial 编辑风",
+  "entry": "insurance-broker-site.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-05T13:29:31.428Z",
+  "updatedAt": "2026-06-05T13:29:31.432Z",
+  "metadata": {
+    "identifier": "insurance-broker-site",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}

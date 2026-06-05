@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>银保爸爸把孩子们管的真严！保险监管三支柱，"小"公司其实也安全 — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0%; transition: width 0.1s linear; }
+    .back-link { max-width: 800px; margin: 0 auto; padding: 32px var(--gutter) 0; }
+    .back-link a { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .back-link a:hover { color: var(--fg); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-header { max-width: 800px; margin: 0 auto; padding: 48px var(--gutter) 0; }
+    .article-header .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .article-header h1 { font: 700 clamp(32px, 5vw, 48px)/1.15 var(--font-display); letter-spacing: -0.015em; margin-bottom: 24px; }
+    .article-header .lead { margin-bottom: 32px; max-width: 640px; }
+    .article-meta-row { display: flex; gap: 32px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .meta-author { display: flex; align-items: center; gap: 12px; }
+    .meta-avatar { width: 36px; height: 36px; background: oklch(94% 0.005 95); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-display); color: var(--muted); }
+    .meta-author-name { font: 500 14px/1 var(--font-body); }
+    .meta-author-title { font: 400 12px/1 var(--font-body); color: var(--muted); margin-top: 2px; }
+    .meta-info { display: flex; gap: 24px; font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 80px; }
+    .article-body p { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 28px; }
+    .article-body h2 { font: 600 clamp(22px, 2.5vw, 28px)/1.3 var(--font-display); margin-top: 56px; margin-bottom: 20px; padding-top: 24px; }
+    .article-body h3 { font: 600 20px/1.3 var(--font-display); margin-top: 40px; margin-bottom: 16px; }
+    .article-body blockquote { margin: 48px 0; padding: 32px 0 32px 32px; border-left: 3px solid var(--accent); }
+    .article-body blockquote p { font: 600 clamp(19px, 2vw, 22px)/1.6 var(--font-display); color: var(--fg); margin-bottom: 0; }
+    .article-body .callout { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 40px 0; }
+    .article-body .callout-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .article-body .callout p { font: 400 15px/1.7 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 0; }
+    .pillar-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 32px 0; }
+    .pillar-card .pillar-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .pillar-card h3 { margin-top: 0; margin-bottom: 12px; }
+    .pillar-card p { margin-bottom: 16px; }
+    .pillar-card p:last-child { margin-bottom: 0; }
+    .data-highlight { background: var(--surface); border: 1px solid var(--border); padding: 24px 32px; margin: 32px 0; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .data-highlight .data-num { font: 700 clamp(32px, 4vw, 48px)/1 var(--font-display); color: var(--accent); }
+    .data-highlight .data-desc { font: 400 15px/1.6 var(--font-body); color: oklch(35% 0.015 70); }
+    .article-tags { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .article-tag { font: 400 12px/1 var(--font-mono); padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+    .author-card-section { border-top: 1px solid var(--border); }
+    .author-card-inner { max-width: 680px; margin: 0 auto; padding: 48px var(--gutter); display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+    .author-photo { width: 80px; height: 100px; background: oklch(94% 0.005 95); border: 1px solid var(--border); display: grid; place-items: center; font: 400 11px/1 var(--font-body); color: var(--muted); text-align: center; }
+    .author-info h4 { font: 600 18px/1.3 var(--font-display); margin-bottom: 4px; }
+    .author-info .title { font: 400 13px/1 var(--font-body); color: var(--muted); margin-bottom: 16px; }
+    .author-info p { font: 400 14px/1.6 var(--font-body); color: var(--muted); margin-bottom: 20px; }
+    .author-contact { display: flex; gap: 24px; align-items: center; }
+    .author-qr { width: 72px; height: 72px; border: none; overflow: hidden; display: grid; place-items: center; font: 400 9px/1.2 var(--font-body); color: var(--muted); text-align: center; padding: 4px; }
+    .author-contact-text { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+    .author-contact-text strong { color: var(--fg); font-weight: 500; }
+    .related-section { border-top: 1px solid var(--border); }
+    .related-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .related-header { margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .related-card { display: block; padding-top: 24px; border-top: 1px solid var(--border); transition: opacity 0.15s; }
+    .related-card:hover { opacity: 0.7; }
+    .related-card .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .related-card h3 { font: 600 clamp(17px, 1.8vw, 20px)/1.3 var(--font-display); margin-bottom: 10px; }
+    .related-card p { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+    .related-card .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); margin-top: 12px; letter-spacing: 0.04em; }
+    @media (max-width: 768px) {
+      .article-header { padding-top: 32px; }
+      .article-meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .meta-info { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; gap: 24px; }
+      .author-card-inner { grid-template-columns: 1fr; }
+      .author-contact { flex-direction: column; align-items: flex-start; }
+      .data-highlight { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="articles.html" class="active">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="back-link">
+    <a href="articles.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      返回文章列表
+    </a>
+  </div>
+
+  <header class="article-header">
+    <div class="card-eyebrow">行业监管</div>
+    <h1>银保爸爸把孩子们管的真严！保险监管三支柱，"小"公司其实也安全</h1>
+    <p class="lead">品牌的力量太强大，中国约有178家保险公司，大众熟知的也就那几家。从金融监管的角度，看看你担心的"小保险公司"是不是靠谱？</p>
+    <div class="article-meta-row">
+      <div class="meta-author">
+        <div class="meta-avatar">T</div>
+        <div>
+          <div class="meta-author-name">Tesla妈妈</div>
+          <div class="meta-author-title">专业保险经纪人</div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <span>Tesla妈妈</span>
+        <span>阅读 8 分钟</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>在上一篇《痛心！一朵鲜花插在了牛粪上》中提到，我打算用3篇文章，很认真的、很严肃的、很负责……把这些"误会"好好捋捋……这是第2篇，重点讨论一下保险公司中的"大公司"和"小公司"，从金融监管的角度，看看你担心的"小保险公司"是不是靠谱？</p>
+
+    <p>品牌的力量实在是太强大了，中国目前约有保险公司178家（其中人身险，包括健康险、养老险公司约91家，其余为财产险公司、再保险公司），大众所熟知的估计也就中国人寿、中国平安、太平洋保险……了吧。</p>
+
+    <p>这里，不得不介绍一位"家长"——银保爸爸（中国银行保险监督管理委员会），看看他是怎么样用三招，就把"孩子们"管理的服服帖帖的……</p>
+
+    <div class="data-highlight">
+      <div class="data-num">5750亿$</div>
+      <div class="data-desc">这位"银保爸爸"目前管理着全球第二大保险市场，2018年中国保费总额达5750亿美元，而且还在快速增长。瑞士再保险报告称：中国有望在2030年代中期成为全球最大的保险市场。</div>
+    </div>
+
+    <p>你看，银保爸爸压力还是很大的，这么多钱都是老百姓的生计啊，哪能出乱子呢。但是，他很有办法，三招：偿二代、公司治理、市场行为监督（被称为监管三支柱）把孩子们管理的严严的。</p>
+
+    <div class="pillar-card">
+      <div class="pillar-label">支柱一</div>
+      <h3>"偿二代"不是"富二代"</h3>
+      <p>所谓"偿二代"，是原中国保险监督管理委员会颁布的于2015年试行并在2016年正式实施的中国第二代偿付能力监管制度体系，业内简称为"偿二代"。</p>
+      <p>核心是确保保险公司在各种风险，特别是极端风险下，仍然具备偿付能力。也就是解决投保人最关心的保险公司倒闭了、跑路了、保险资金血本无归了等等情况下还能不能给理赔的问题。</p>
+      <p>简单理解就是银保爸爸出了一套考试题目，要求孩子们定期考试，银保爸爸评分，分数达不到要求的，罚站！下课！</p>
+      <p>6月6日，银保爸爸就对今年二季度178家保险公司综合偿付能力进行了一次考试评级，考试结果非常好：综合偿付能力充足率为247%，105家保险公司在风险综合评级中被评为A类公司，68家被评为B类公司，2家被评为C类公司，2家被评为D类公司。简单讲就是：保险公司有钱，赔得起，因为银保爸爸管得严，不能乱花钱。</p>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-label">支柱二</div>
+      <h3>公司治理——有"家法"，不要乱来</h3>
+      <p>在上面的考试中，孩子们交的试卷有可能是抄的，造假虽然概率很小，但不是没有可能。银保爸爸总结了孩子们8大调皮捣蛋行为：虚假出资、公司治理、资金运用、产品不当创新、销售误导、理赔难、违规套取费用、数据造假。</p>
+      <p>这些乱象本身就是"公司治理"的范畴。那怎么办？银保爸爸说：你们成家立业，娶妻生子……这些"家庭"内部事情，我也得管啦。为此，银保爸爸专门成立了一个部门叫公司治理监管部，也出台了系列"家法"。</p>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-label">支柱三</div>
+      <h3>市场行为监督——定期汇报思想工作</h3>
+      <p>除了定期考试、有家法，还不够，还要定期汇报思想工作呢。市场行为监督最核心的就是信息披露，简单讲就是定期要向银保爸爸和公众汇报思想工作。</p>
+      <p>其实，作为一个老百姓哪里会去看什么信息披露，我就买个保险，又不是做几个亿的投资。这里，只是想告诉你，要相信：中国有着全世界最严格监管体系，金融安全是国家最关心的问题。</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">小结</div>
+      <p>虽然咱们有着最严格的监管三支柱体系（偿二代、公司治理、市场行为监督），但不可否认路还很长。不过，对于咱们老百姓购买保险产品来说，无论是大公司产品、还是小公司产品，安全性都是非常可靠的，可以放心。</p>
+    </div>
+
+    <p>PS：其实，"小"保险公司其实并不小，最低注册实收资本起步都是2个亿，这要秒杀市场上多少公司啊。同时，可能很多人不清楚，保险公司也要买保险，保险公司也要把风险分摊出去，这叫再保险。另外，保险公司都要计提保障基金的，为了进一步分散风险。最最后，还有银保爸爸兜底呢。</p>
+
+  </article>
+
+  <div class="article-tags">
+    <span class="article-tag">保险监管</span>
+    <span class="article-tag">偿二代</span>
+    <span class="article-tag">公司治理</span>
+    <span class="article-tag">保险公司安全</span>
+  </div>
+
+  <section class="author-card-section">
+    <div class="author-card-inner">
+      <div class="author-photo">照片</div>
+      <div class="author-info">
+        <h4>Tesla妈妈</h4>
+        <div class="title">专业保险经纪人</div>
+        <p>浙大应用心理学在职研究生，从全职妈妈到专业保险经纪人。始终站在客户立场，提供家庭保障规划全流程服务。</p>
+        <div class="author-contact">
+          <div class="author-qr"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="author-contact-text">
+            <strong>扫码添加微信</strong><br/>
+            预约免费家庭保障诊断
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header">
+        <div class="eyebrow">相关推荐</div>
+      </div>
+      <div class="related-grid">
+        <a href="article-10.html" class="related-card">
+          <div class="card-eyebrow">行业观察</div>
+          <h3>用数据解密为什么我对保险有这么多美丽的"误会"</h3>
+          <p>经济火车跑太快、风险意识未建立、销售人员参差不齐——三大根因……</p>
+          <div class="meta">Tesla妈妈 · 10 min</div>
+        </a>
+        <a href="article-2.html" class="related-card">
+          <div class="card-eyebrow">保险科普</div>
+          <h3>保险简史：保险的本质是"风险共担"</h3>
+          <p>从保险历史出发，看看保险的本质——起源于航海，本质是"花小钱担大事"的金融互助工具……</p>
+          <div class="meta">Tesla妈妈 · 8 min</div>
+        </a>
+        <a href="article-9.html" class="related-card">
+          <div class="card-eyebrow">投保指南</div>
+          <h3>体检报告中的"问题"也可以投保</h3>
+          <p>6个非标体实测案例，上千份案例让你放心……</p>
+          <div class="meta">Tesla妈妈 · 8 min</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links">
+          <li>微信：扫码添加</li>
+        </ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tesla妈妈 · 保留所有权利
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+    (function() {
+      var bar = document.getElementById('progressBar');
+      var articleBody = document.querySelector('.article-body');
+      if (!bar || !articleBody) return;
+      function updateProgress() {
+        var rect = articleBody.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = -rect.top;
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    })();
+  </script>
+
+</body>
+</html>

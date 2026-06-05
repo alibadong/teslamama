@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>观点文章 — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .page-hero { max-width: var(--max-w); margin: 0 auto; padding: 80px var(--gutter) 48px; }
+    .page-hero .eyebrow { margin-bottom: 20px; }
+    .page-hero .display-lg { margin-bottom: 16px; }
+    .page-hero .lead { max-width: 600px; }
+
+    .filter-bar { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn { background: none; border: 1px solid var(--border); padding: 8px 20px; font: 400 13px/1 var(--font-body); color: var(--muted); cursor: pointer; transition: all 0.15s; border-radius: 0; }
+    .filter-btn:hover { border-color: var(--fg); color: var(--fg); }
+    .filter-btn.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+    .featured-article { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) 64px; }
+    .featured-article-inner { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; padding: 48px; border: 1px solid var(--border); background: var(--surface); }
+    .featured-article-content .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .featured-article-content h2 { font: 700 clamp(24px, 3vw, 32px)/1.2 var(--font-display); margin-bottom: 16px; }
+    .featured-article-content .excerpt { font: 400 15px/1.7 var(--font-body); color: var(--muted); margin-bottom: 24px; }
+    .featured-article-content .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; margin-bottom: 24px; }
+    .featured-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
+
+    .article-list-section { border-top: 1px solid var(--border); }
+    .article-list-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .article-list-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; }
+    .article-list-header .eyebrow { margin-bottom: 0; }
+    .article-count { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+
+    .article-list { display: flex; flex-direction: column; }
+    .article-item { display: block; padding: 32px 0; border-bottom: 1px solid var(--border); transition: opacity 0.15s; }
+    .article-item:hover { opacity: 0.7; }
+    .article-item:first-child { padding-top: 0; }
+    .article-item-grid { display: grid; grid-template-columns: 80px 1fr auto; gap: 32px; align-items: baseline; }
+    .article-item-num { font: 700 clamp(24px, 3vw, 32px)/1 var(--font-display); color: oklch(88% 0.005 95); padding-top: 4px; }
+    .article-item-category { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .article-item-title { font: 600 clamp(18px, 2vw, 22px)/1.3 var(--font-display); margin-bottom: 8px; }
+    .article-item-excerpt { font: 400 14px/1.6 var(--font-body); color: var(--muted); max-width: 560px; }
+    .article-item-readtime { font: 400 12px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; padding-top: 4px; }
+
+    @media (max-width: 1024px) {
+      .featured-article-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 48px var(--gutter) 32px; }
+      .filter-bar { padding: 0 var(--gutter) 32px; }
+      .article-item-grid { grid-template-columns: 1fr; gap: 4px; }
+      .article-item-num { display: none; }
+      .article-item-readtime { display: none; }
+      .featured-article-inner { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="articles.html" class="active">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="eyebrow">观点 · 洞察</div>
+    <h1 class="display-lg">专业观点</h1>
+    <p class="lead">关于保险认知、家庭资产配置和社会保障的深度思考，始终坚持"先懂保险，才能买对保险"的理念。</p>
+  </header>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterArticles('all', this)">全部</button>
+    <button class="filter-btn" onclick="filterArticles('intro', this)">个人介绍</button>
+    <button class="filter-btn" onclick="filterArticles('basics', this)">保险科普</button>
+    <button class="filter-btn" onclick="filterArticles('asset', this)">资产配置</button>
+    <button class="filter-btn" onclick="filterArticles('social', this)">社会保障</button>
+    <button class="filter-btn" onclick="filterArticles('practical', this)">实操建议</button>
+  </div>
+
+  <!-- Featured Article -->
+  <section class="featured-article">
+    <div class="featured-label">置顶文章</div>
+    <a href="article-1.html" class="featured-article-inner" style="text-decoration: none; color: inherit;">
+      <div class="featured-article-content">
+        <div class="card-eyebrow">个人介绍</div>
+        <h2>为什么选我？认准专业的保险经纪人Tesla妈妈</h2>
+        <p class="excerpt">六大理由告诉你，为什么保险经纪人比代理人更值得信赖。始终站在客户立场，提供定制方案，选我就等于联系上了所有保险公司。</p>
+        <div class="meta">Tesla妈妈 · 阅读 5 分钟</div>
+        <span class="hero-cta" style="display: inline-flex; align-items: center; gap: 8px; font: 500 14px/1 var(--font-body); color: var(--fg); border-bottom: 1.5px solid var(--fg); padding-bottom: 4px;">
+          阅读全文
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </div>
+    </a>
+  </section>
+
+  <!-- Article List -->
+  <section class="article-list-section">
+    <div class="article-list-inner">
+      <div class="article-list-header">
+        <div class="eyebrow">全部文章</div>
+        <span class="article-count">共 12 篇</span>
+      </div>
+
+      <div class="article-list">
+
+        <a href="article-1.html" class="article-item" data-category="intro">
+          <div class="article-item-grid">
+            <div class="article-item-num">01</div>
+            <div class="article-item-content">
+              <div class="article-item-category">个人介绍</div>
+              <h3 class="article-item-title">为什么选我？认准专业的保险经纪人Tesla妈妈</h3>
+              <p class="article-item-excerpt">大家好，我是Tesla妈妈，一个正式的自我介绍——浙大心理系飘过、干过幼儿教育、还干过程序猿……现在就职于，是一名专业的保险经纪人。六大理由告诉你为什么选择我。</p>
+            </div>
+            <div class="article-item-readtime">5 min</div>
+          </div>
+        </a>
+
+        <a href="article-2.html" class="article-item" data-category="basics">
+          <div class="article-item-grid">
+            <div class="article-item-num">02</div>
+            <div class="article-item-content">
+              <div class="article-item-category">保险科普</div>
+              <h3 class="article-item-title">保险简史：保险的本质是"风险共担"，是"花小钱担大事"的一种金融工具</h3>
+              <p class="article-item-excerpt">先懂保险，才能买对保险。从保险历史出发，看看保险的本质——起源于航海，本质是"风险共担"，是"花小钱担大事"的金融互助工具。</p>
+            </div>
+            <div class="article-item-readtime">8 min</div>
+          </div>
+        </a>
+
+        <a href="article-3.html" class="article-item" data-category="intro">
+          <div class="article-item-grid">
+            <div class="article-item-num">03</div>
+            <div class="article-item-content">
+              <div class="article-item-category">个人故事</div>
+              <h3 class="article-item-title">Dream It Possible!</h3>
+              <p class="article-item-excerpt">一位全职妈妈的自学育儿之路，苦中有乐。从为孩子的保险开始，到从客户变身员工，机缘巧合。从0开始，只想做个好妈妈。</p>
+            </div>
+            <div class="article-item-readtime">6 min</div>
+          </div>
+        </a>
+
+        <a href="article-4.html" class="article-item" data-category="asset">
+          <div class="article-item-grid">
+            <div class="article-item-num">04</div>
+            <div class="article-item-content">
+              <div class="article-item-category">资产配置</div>
+              <h3 class="article-item-title">家庭资产配置生命周期：青年求增值，壮年控风险，退休享晚年</h3>
+              <p class="article-item-excerpt">从家庭资产配置的角度，理解保险作为家庭生活"稳定器"的含义。众多资产配置手段该如何选择？为什么说保险是家庭生活的"稳定器"？</p>
+            </div>
+            <div class="article-item-readtime">7 min</div>
+          </div>
+        </a>
+
+        <a href="article-5.html" class="article-item" data-category="social">
+          <div class="article-item-grid">
+            <div class="article-item-num">05</div>
+            <div class="article-item-content">
+              <div class="article-item-category">社会保障</div>
+              <h3 class="article-item-title">"社保"前面加"基本"两字，啥意思？带你一图读懂社会保障体系</h3>
+              <p class="article-item-excerpt">带你一图读懂社会保障体系，构建属于自己的保障计划。三层社会保障体系——基本社会保障、互助性社会保障、自我保障，帮你找到属于自己的保障地图。</p>
+            </div>
+            <div class="article-item-readtime">6 min</div>
+          </div>
+        </a>
+
+        <a href="article-6.html" class="article-item" data-category="basics">
+          <div class="article-item-grid">
+            <div class="article-item-num">06</div>
+            <div class="article-item-content">
+              <div class="article-item-category">家庭保障</div>
+              <h3 class="article-item-title">妥妥的我爱我家，据说这图至少能管三代</h3>
+              <p class="article-item-excerpt">一份完整的家庭保障计划长什么样？不讲产品，从保障目标、给谁买、产品大类三个维度，帮你理清家庭保险的底层逻辑。"吉祥四宝"——重疾、医疗、意外、定期寿险。</p>
+            </div>
+            <div class="article-item-readtime">10 min</div>
+          </div>
+        </a>
+
+        <a href="article-7.html" class="article-item" data-category="practical">
+          <div class="article-item-grid">
+            <div class="article-item-num">07</div>
+            <div class="article-item-content">
+              <div class="article-item-category">投保决策</div>
+              <h3 class="article-item-title">深度好文：口红一样的投保</h3>
+              <p class="article-item-excerpt">从心理学和保险专业的双重角度，聊聊怎样聪明地选保险。选保三原则：挑选时像理科男买车一样思考，下手时像买口红一样毫不犹豫；产品组合加动态调整；分析病史和体况才是真正的需求。</p>
+            </div>
+            <div class="article-item-readtime">8 min</div>
+          </div>
+        </a>
+
+        <a href="article-8.html" class="article-item" data-category="practical">
+          <div class="article-item-grid">
+            <div class="article-item-num">08</div>
+            <div class="article-item-content">
+              <div class="article-item-category">理赔指南</div>
+              <h3 class="article-item-title">说好不哭，买个保险，赔不了？4条实在建议，解决90%的问题</h3>
+              <p class="article-item-excerpt">保险合同纠纷占投诉的97%，问题出在哪里？心理预期错位是内因，合同理解错位是外因。四条建议：先懂保险再买保险、保持好心态、自行投保需谨慎、找靠谱的保险顾问。</p>
+            </div>
+            <div class="article-item-readtime">7 min</div>
+          </div>
+        </a>
+
+        <a href="article-9.html" class="article-item" data-category="practical">
+          <div class="article-item-grid">
+            <div class="article-item-num">09</div>
+            <div class="article-item-content">
+              <div class="article-item-category">投保指南</div>
+              <h3 class="article-item-title">实锤！"体检报告"中的这些"问题"也可以投保，上千份实测案例让你放心</h3>
+              <p class="article-item-excerpt">整理了6个具有开创性的非标体案例——甲状腺癌术后、脂肪肝、心电图异常、恶性葡萄胎……大部分非标体都可以找到理想的承保产品。</p>
+            </div>
+            <div class="article-item-readtime">8 min</div>
+          </div>
+        </a>
+
+        <a href="article-10.html" class="article-item" data-category="basics">
+          <div class="article-item-grid">
+            <div class="article-item-num">10</div>
+            <div class="article-item-content">
+              <div class="article-item-category">行业观察</div>
+              <h3 class="article-item-title">痛心！一朵鲜花插在了牛粪上——用数据解密为什么我对保险有这么多美丽的"误会"</h3>
+              <p class="article-item-excerpt">经济火车跑太快、风险保障意识未建立、764万营销员参差不齐——三大根因深度解析，为什么大部分人对保险有这么多美丽的误会。</p>
+            </div>
+            <div class="article-item-readtime">10 min</div>
+          </div>
+        </a>
+
+        <a href="article-11.html" class="article-item" data-category="basics">
+          <div class="article-item-grid">
+            <div class="article-item-num">11</div>
+            <div class="article-item-content">
+              <div class="article-item-category">行业监管</div>
+              <h3 class="article-item-title">银保爸爸把孩子们管的真严！保险监管三支柱，"小"公司其实也安全</h3>
+              <p class="article-item-excerpt">偿二代、公司治理、市场行为监督——从金融监管的角度，看看你担心的"小保险公司"是不是靠谱？综合偿付能力充足率247%，105家A类公司。</p>
+            </div>
+            <div class="article-item-readtime">8 min</div>
+          </div>
+        </a>
+
+        <a href="article-12.html" class="article-item" data-category="basics">
+          <div class="article-item-grid">
+            <div class="article-item-num">12</div>
+            <div class="article-item-content">
+              <div class="article-item-category">行业观点</div>
+              <h3 class="article-item-title">讲透保险的第一人是谁？我认为是马云马爸爸，不服不行~</h3>
+              <p class="article-item-excerpt">马云演讲实录：保险的使命是给人以安全感，本质是既利他又利己的思想。一个社会所有人都成为保民是非常健康的，而且应该是积极鼓励的。</p>
+            </div>
+            <div class="article-item-readtime">6 min</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links">
+          <li>微信：扫码添加</li>
+        </ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tesla妈妈 · 保留所有权利
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+
+    function filterArticles(category, btn) {
+      var items = document.querySelectorAll('.article-item');
+      items.forEach(function(item) {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var visible = document.querySelectorAll('.article-item:not([style*="display: none"])').length;
+      var counter = document.querySelector('.article-count');
+      if (counter) counter.textContent = '共 ' + visible + ' 篇';
+    }
+  </script>
+
+</body>
+</html>

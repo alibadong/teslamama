@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>说好不哭，买个保险，赔不了？4条实在建议，解决90%的问题 — Tesla妈妈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <style>
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0%; transition: width 0.1s linear; }
+    .back-link { max-width: 800px; margin: 0 auto; padding: 32px var(--gutter) 0; }
+    .back-link a { font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; transition: color 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .back-link a:hover { color: var(--fg); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-header { max-width: 800px; margin: 0 auto; padding: 48px var(--gutter) 0; }
+    .article-header .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .article-header h1 { font: 700 clamp(32px, 5vw, 48px)/1.15 var(--font-display); letter-spacing: -0.015em; margin-bottom: 24px; }
+    .article-header .lead { margin-bottom: 32px; max-width: 640px; }
+    .article-meta-row { display: flex; gap: 32px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+    .meta-author { display: flex; align-items: center; gap: 12px; }
+    .meta-avatar { width: 36px; height: 36px; background: oklch(94% 0.005 95); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-display); color: var(--muted); }
+    .meta-author-name { font: 500 14px/1 var(--font-body); }
+    .meta-author-title { font: 400 12px/1 var(--font-body); color: var(--muted); margin-top: 2px; }
+    .meta-info { display: flex; gap: 24px; font: 400 13px/1 var(--font-mono); color: var(--muted); letter-spacing: 0.04em; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 80px; }
+    .article-body p { font: 400 17px/1.9 var(--font-body); color: oklch(28% 0.015 70); margin-bottom: 28px; }
+    .article-body h2 { font: 600 clamp(22px, 2.5vw, 28px)/1.3 var(--font-display); margin-top: 56px; margin-bottom: 20px; padding-top: 24px; }
+    .article-body h3 { font: 600 20px/1.3 var(--font-display); margin-top: 40px; margin-bottom: 16px; }
+    .article-body blockquote { margin: 48px 0; padding: 32px 0 32px 32px; border-left: 3px solid var(--accent); }
+    .article-body blockquote p { font: 600 clamp(19px, 2vw, 22px)/1.6 var(--font-display); color: var(--fg); margin-bottom: 0; }
+    .article-body .callout { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin: 40px 0; }
+    .article-body .callout-label { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .article-body .callout p { font: 400 15px/1.7 var(--font-body); color: oklch(35% 0.015 70); margin-bottom: 0; }
+    .article-tags { max-width: 680px; margin: 0 auto; padding: 0 var(--gutter) 48px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .article-tag { font: 400 12px/1 var(--font-mono); padding: 6px 16px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+    .author-card-section { border-top: 1px solid var(--border); }
+    .author-card-inner { max-width: 680px; margin: 0 auto; padding: 48px var(--gutter); display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+    .author-photo { width: 80px; height: 100px; background: oklch(94% 0.005 95); border: 1px solid var(--border); display: grid; place-items: center; font: 400 11px/1 var(--font-body); color: var(--muted); text-align: center; }
+    .author-info h4 { font: 600 18px/1.3 var(--font-display); margin-bottom: 4px; }
+    .author-info .title { font: 400 13px/1 var(--font-body); color: var(--muted); margin-bottom: 16px; }
+    .author-info p { font: 400 14px/1.6 var(--font-body); color: var(--muted); margin-bottom: 20px; }
+    .author-contact { display: flex; gap: 24px; align-items: center; }
+    .author-qr { width: 72px; height: 72px; border: none; overflow: hidden; display: grid; place-items: center; font: 400 9px/1.2 var(--font-body); color: var(--muted); text-align: center; padding: 4px; }
+    .author-contact-text { font: 400 13px/1.5 var(--font-body); color: var(--muted); }
+    .author-contact-text strong { color: var(--fg); font-weight: 500; }
+    .related-section { border-top: 1px solid var(--border); }
+    .related-inner { max-width: var(--max-w); margin: 0 auto; padding: 64px var(--gutter) 80px; }
+    .related-header { margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .related-card { display: block; padding-top: 24px; border-top: 1px solid var(--border); transition: opacity 0.15s; }
+    .related-card:hover { opacity: 0.7; }
+    .related-card .card-eyebrow { font: 500 10px/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .related-card h3 { font: 600 clamp(17px, 1.8vw, 20px)/1.3 var(--font-display); margin-bottom: 10px; }
+    .related-card p { font: 400 14px/1.6 var(--font-body); color: var(--muted); }
+    .related-card .meta { font: 400 12px/1 var(--font-mono); color: var(--muted); margin-top: 12px; letter-spacing: 0.04em; }
+    @media (max-width: 768px) {
+      .article-header { padding-top: 32px; }
+      .article-meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .meta-info { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; gap: 24px; }
+      .author-card-inner { grid-template-columns: 1fr; }
+      .author-contact { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Tesla妈妈</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="articles.html" class="active">观点文章</a></li>
+      </ul>
+      <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="back-link">
+    <a href="articles.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      返回文章列表
+    </a>
+  </div>
+
+  <header class="article-header">
+    <div class="card-eyebrow">理赔指南</div>
+    <h1>说好不哭，买个保险，赔不了？4条实在建议，解决90%的问题</h1>
+    <p class="lead">保险合同纠纷占投诉的97%，问题出在哪里？从心理预期错位到合同理解错位，深度分析内因外因，给出四条靠谱建议。</p>
+    <div class="article-meta-row">
+      <div class="meta-author">
+        <div class="meta-avatar">T</div>
+        <div>
+          <div class="meta-author-name">Tesla妈妈</div>
+          <div class="meta-author-title">专业保险经纪人</div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <span>Tesla妈妈</span>
+        <span>阅读 7 分钟</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>一首《说好不哭》刷遍朋友圈，作为一名专业的保险经纪人，帮你避免理赔的烦恼是我工作的重要部分，说好的不哭，得做到。</p>
+
+    <p>根据中国银保监会公布的"2019年上半年保险消费投诉情况的通报"显示：2019年上半年共接收4.8万件保险消费投诉，其中保险合同纠纷占97.34%。为什么是合同？因为合同太复杂，非专业人士很少有人能完全弄明白。</p>
+
+    <h2>一、心理预期错位——出现纠纷的内因</h2>
+
+    <p>2019年上半年4.8万件保险消费投诉中，涉嫌违法违规的有1283件，占总量的2.66%。这个数据说明绝大部分都是遵纪守法的。既然绝大部分都遵纪守法，问题出在哪里？</p>
+
+    <p>投诉情况通报中给出的人身险案件突出问题：责任认定纠纷、理赔时效慢、理赔金额争议、理赔资料繁琐等。仔细想来，这里面首先是一个叫"心理预期"的问题：</p>
+
+    <p>1、理赔范围和预期的不一样。明明是得了某疾病就可以理赔，但是没有注意这种疾病还要达到某种程度才行。</p>
+
+    <p>2、理赔方式和预期的不一样。明明是医院证明得了某疾病就拿钱，结果是要自己先垫后报销。</p>
+
+    <p>3、赔多赔少、理赔速度和预期的不一样。最好是一个电话钱都能到账，最好金额超出预期。</p>
+
+    <blockquote>
+      <p>我们每个人都给了保险产品一个"心理预期"——就像相亲一样，你心中的保险产品和现实中之间，还隔着几十个"添油加醋"的媒婆。</p>
+    </blockquote>
+
+    <p>另外，部分同学对大牌公司深信不疑也是心理预期错位的一个重要原因。</p>
+
+    <h2>二、合同理解错位——出现纠纷的外因</h2>
+
+    <p>理性分析原因，其实都在合同里面，一般都会明确注意事项。这里重点说两点：</p>
+
+    <p>1、保什么，不保什么都有界定。比如酒驾后的"意外"能叫"意外"吗？</p>
+
+    <p>2、体况如实告知。投保前保险公司都会让大家填写健康告知的，数据显示90%以上的拒赔案例都是未如实告知健康状况造成的。</p>
+
+    <p>看似简单，难点在哪里？</p>
+
+    <p>1、医学名词和界定复杂，看起来头晕。</p>
+    <p>2、法律用语晦涩难懂，生怕藏着什么玄机。</p>
+    <p>3、金融词汇似懂非懂，与钱相关的生怕出岔子。</p>
+
+    <p>兼有医学、法学和金融学的一份合同确实是难为大部分同学了。为什么说是外因？因为咱们是消费者，不是专家。以上这些是需要销售员或者顾问和你共同确定的。可现实中，据说有800万保险从业者，真的是良莠不齐。</p>
+
+    <h2>三、四条靠谱的建议</h2>
+
+    <h3>1. 先懂保险，再买保险</h3>
+
+    <p>不一定非要成为专家，但需要掌握保险的基本原理和基本常识。了解保险的本质、家庭资产配置的生命周期、社会保障体系的基本框架，以及完整的家庭保障计划逻辑。</p>
+
+    <h3>2. 保持良好的心态</h3>
+
+    <p>投保其实和咱们买口红一样，没有本质区别。不要纠结，千金难买姐喜欢。</p>
+
+    <h3>3. 自行投保需谨慎</h3>
+
+    <p>对待纯互联网保险产品需谨慎。保险，包括整个金融市场在一定程度上都是赚的"信息不对称"的钱，信息不对称是金融市场最核心的特征。"保险中介"和"互联网"的存在就是为了消除信息不对称，但现实中，利用互联网制造新的信息不对称的现象大有人在。</p>
+
+    <h3>4. 找一个靠谱的保险顾问</h3>
+
+    <p>专业的事交给专业的人。如何判断一个顾问是否靠谱？我的理解是：不制造焦虑、不浮夸、不一味迎合需求、适当管控心理预期，最后给出专业的解决方案。</p>
+
+    <div class="callout">
+      <div class="callout-label">小结</div>
+      <p>出现保险纠纷的原因：心理预期错位是内因，合同理解错位是外因。四条建议：先懂保险再买保险；保持良好心态；自行投保需谨慎；找靠谱的保险顾问，专业的事交给专业的人。</p>
+    </div>
+
+  </article>
+
+  <div class="article-tags">
+    <span class="article-tag">理赔纠纷</span>
+    <span class="article-tag">健康告知</span>
+    <span class="article-tag">投保建议</span>
+    <span class="article-tag">保险顾问</span>
+  </div>
+
+  <section class="author-card-section">
+    <div class="author-card-inner">
+      <div class="author-photo">照片</div>
+      <div class="author-info">
+        <h4>Tesla妈妈</h4>
+        <div class="title">专业保险经纪人</div>
+        <p>浙大应用心理学在职研究生，从全职妈妈到专业保险经纪人。始终站在客户立场，提供家庭保障规划全流程服务。</p>
+        <div class="author-contact">
+          <div class="author-qr"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="author-contact-text">
+            <strong>扫码添加微信</strong><br/>
+            预约免费家庭保障诊断
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header">
+        <div class="eyebrow">相关推荐</div>
+      </div>
+      <div class="related-grid">
+        <a href="article-7.html" class="related-card">
+          <div class="card-eyebrow">投保决策</div>
+          <h3>深度好文：口红一样的投保</h3>
+          <p>选保三原则——挑选时像理科男买车，下手时像买口红一样毫不犹豫……</p>
+          <div class="meta">Tesla妈妈 · 8 min</div>
+        </a>
+        <a href="article-6.html" class="related-card">
+          <div class="card-eyebrow">家庭保障</div>
+          <h3>妥妥的我爱我家，据说这图至少能管三代</h3>
+          <p>一份完整的家庭保障计划长什么样？三个维度帮你理清底层逻辑……</p>
+          <div class="meta">Tesla妈妈 · 10 min</div>
+        </a>
+        <a href="article-5.html" class="related-card">
+          <div class="card-eyebrow">社会保障</div>
+          <h3>"社保"前面加"基本"两字，啥意思？</h3>
+          <p>带你一图读懂社会保障体系，构建属于自己的保障计划……</p>
+          <div class="meta">Tesla妈妈 · 6 min</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Tesla妈妈</div>
+        <p class="footer-desc">专业保险经纪人，提供家庭保障规划、资产传承、风险管理等综合保险服务。</p>
+      </div>
+      <div>
+        <div class="footer-heading">导航</div>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="articles.html">观点文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">联系方式</div>
+        <ul class="footer-links">
+          <li>微信：扫码添加</li>
+        </ul>
+        <div class="qr-placeholder" style="margin-top: 16px; border: none;"><img src="mq13ins9-74dbc445ea6c4e9507afd962eb8ffa7f.jpg" alt="微信二维码" style="width:100%;height:100%;object-fit:cover;"/></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tesla妈妈 · 保留所有权利
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '.nav-links.open{display:flex!important;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px var(--gutter);gap:16px;z-index:99;}';
+      document.head.appendChild(style);
+    })();
+    (function() {
+      var bar = document.getElementById('progressBar');
+      var articleBody = document.querySelector('.article-body');
+      if (!bar || !articleBody) return;
+      function updateProgress() {
+        var rect = articleBody.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = -rect.top;
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    })();
+  </script>
+
+</body>
+</html>
